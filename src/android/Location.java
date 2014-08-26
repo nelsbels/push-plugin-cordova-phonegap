@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.infobip.push.PushLocationManager;
+import com.infobip.push.lib.Prefs;
 
 public class Location extends CordovaPlugin {
 	private static CallbackContext clbContext;
@@ -59,7 +60,9 @@ public class Location extends CordovaPlugin {
 			
             // ############# GET_UPDATE_TIME_INTERVAL #############
 			if (ACTION_PUSH_LOCATION_GET_UPDATE_TIME_INTERVAL.equals(action)) {
-				int timeInterval = this.locationManager.getLocationUpdateTimeInterval();
+				Prefs prefs = new Prefs(this.cordova.getActivity().getApplicationContext());
+				int timeInterval = prefs.getLocationUpdateTimeInterval();
+				
 				clbContext.success(new JSONObject("{\"getLocationUpdateTimeInterval\": "+ timeInterval +"}"));
 				return true;
 			}

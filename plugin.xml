@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.infobip.push.cordova" version="0.2.3">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.infobip.push.cordova" version="0.2.4">
   <name>Infobip Push Notifications</name>
   <description>Infobip Push Notification Plugin for Android and iOS</description>
   <license>MIT</license>
-  <keywords>push, notification, infobip, notifications</keywords>
+  <keywords>push,notification,infobip,notifications,geofence,geolocation,SMS fallback,statistics</keywords>
   <author email="plugins@infobip.com" href="https://push.infobip.com">Infobip Ltd.</author>
+  <engines>
+      <engine name="cordova" version=">=3.0.0" />
+  </engines>
   <js-module src="www/push.js" name="Push">
     <clobbers target="push" />
   </js-module>
@@ -24,11 +27,11 @@
     <source-file src="src/android/Push.java" target-dir="src/com/infobip/push/cordova" />
     <source-file src="src/android/CordovaPushReceiver.java" target-dir="src/com/infobip/push/cordova" />
     <source-file src="src/android/PushHandlerActivity.java" target-dir="src/com/infobip/push/cordova" />
-    <source-file src="src/android/Location.java" 			target-dir="src/com/infobip/push/cordova" />
-    <source-file src="src/android/Builder.java" 			target-dir="src/com/infobip/push/cordova" />
+    <source-file src="src/android/Location.java" target-dir="src/com/infobip/push/cordova" />
+    <source-file src="src/android/Builder.java" target-dir="src/com/infobip/push/cordova" />
     <lib-file src="src/android/infobip-push-1.2.0.jar" />
     <config-file target="AndroidManifest.xml" parent="/*">
-      <permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE"    					android:protectionLevel="signature" />
+      <permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" android:protectionLevel="signature" />
       <uses-permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" />
       <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
       <uses-permission android:name="android.permission.INTERNET" />
