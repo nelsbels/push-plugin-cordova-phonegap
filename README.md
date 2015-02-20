@@ -16,7 +16,8 @@ Requirements
 * `Android™`
 	* Set the minimal required Android SDK version to 8 because GCM push is enabled only from that Android OS version and above.
 * `iOS™`
-	* Tested on iOS 6, 7 and 8.
+	* Xcode 6 and later.
+	* Tested on iOS 7 and 8.
 	* Manage certificates as explained in "APNs setup manual" section [here](https://push.infobip.com/docs).
 
 Basic Usage
